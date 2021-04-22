@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Facades\Util;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,29 +15,29 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
+    // dd(app());
+    // $util = Util::getMessage();
+    $util = app()->make('util');
+    dd($util->getMessage());
+    // dd($util);
     return view('welcome');
 });
+// Route::get('util/', function(Util $util){ // ２）
+//     return $util->getMessage(); // ３）
+//   });
 
 Route::group(['prefix' => 'home'], function() {
-    Route::get('/', 'Controller@aaa');
-    Route::get('/{menuListName}', 'Controller@aaa');
-    Route::get('/{menuListName}/addmenu', 'Controller@aaa');
+    Route::get('/', 'HomeController@index');
+    // Route::get('/{menuListName}', 'Controller@aaa');
+    // Route::get('/{menuListName}/addmenu', 'Controller@aaa');
 });
 
-Route::get('/search', function () {
-    return view('search');
-});
+// Route::get('/search', 'Controller@aaa');
 
-Route::get('/user', function () {
-    return view('user');
-});
+// Route::get('/user', 'Controller@aaa');
 
-Route::get('/login', function () {
-    return view('login');
-});
+// Route::get('/login', 'Controller@aaa');
 
-Route::get('/signin', function () {
-    return view('signin');
-});
+// Route::get('/signin', 'Controller@aaa');
 
 
