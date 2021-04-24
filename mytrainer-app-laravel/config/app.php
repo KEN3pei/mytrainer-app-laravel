@@ -175,6 +175,12 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+        /**
+         * origin provider (2021_4)
+         */
+        App\Providers\S3ServiceProvider::class,
+        // App\Providers\UtilServiceProvider::class,
+
     ],
 
     /*
@@ -226,6 +232,8 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+
+        // 'Util' => App\Facades\Util::class,
 
     ],
 
