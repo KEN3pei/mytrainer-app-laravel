@@ -1,4 +1,4 @@
-//
+// layouts/common.blade.php
 body{
     height: 100vh;
     margin: 0;
@@ -17,7 +17,7 @@ header{
     height: 10vh;
     display:table;
     a {
-        color: #333333;
+        color: #696969;
         text-decoration: none;
         vertical-align:middle;
         display:table-cell;
@@ -46,7 +46,7 @@ header{
 .menulist {
     margin: 0;
     padding: 10px 0 10px 13%;
-    color: #333333;
+    color: #696969;
 }
 .sidebar {
     height: 89vh;
@@ -76,5 +76,37 @@ header{
     margin-top: 1px;
     p {
         margin: 0;
+    }
+}
+
+// home.blade.php
+.create-menu-sec {
+    // background-color: #333333;
+    // opacity: 0.7;
+    margin: 25px;
+    padding: 15px 10px;
+    a {
+        background-color: #333333;
+        opacity: 0.7;
+        text-decoration: none;
+        color: #fff;
+        padding: 10px;
+    }
+    p {
+        display: inline-block;
+        color: #696969;
+    }
+}
+.create-menu-sec:hover {
+    background-color: #bdbbbb;
+    p {
+        color: #fff;
+    }
+}
+
+// search.blade.php
+.image-list-sec {
+    img{
+        height: 100px;
     }
 }

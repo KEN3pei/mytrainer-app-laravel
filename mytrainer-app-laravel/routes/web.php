@@ -19,20 +19,16 @@ Route::get('/', function () {
     // $util = Util::getMessage();
     $util = app()->make('util');
     dd($util->getMessage());
-    // dd($util);
     return view('welcome');
 });
-// Route::get('util/', function(Util $util){ // ２）
-//     return $util->getMessage(); // ３）
-//   });
 
 Route::group(['prefix' => 'home'], function() {
     Route::get('/', 'HomeController@index');
-    // Route::get('/{menuListName}', 'Controller@aaa');
+    Route::get('/{menuName}', 'HomeController@aaa');
     // Route::get('/{menuListName}/addmenu', 'Controller@aaa');
 });
 
-// Route::get('/search', 'Controller@aaa');
+Route::get('/search', 'SearchController@index');
 
 // Route::get('/user', 'Controller@aaa');
 

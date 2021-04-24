@@ -175,7 +175,11 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
-        App\Providers\UtilServiceProvider::class,
+        /**
+         * origin provider (2021_4)
+         */
+        App\Providers\S3ServiceProvider::class,
+        // App\Providers\UtilServiceProvider::class,
 
     ],
 

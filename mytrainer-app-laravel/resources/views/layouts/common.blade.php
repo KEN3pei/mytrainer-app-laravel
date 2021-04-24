@@ -16,8 +16,8 @@
     <body>
         <header>
             <div class="head-section">
-                <a href="">home</a>
-                <a href="">search</a>
+                <a href="/home">home</a>
+                <a href="/search">search</a>
                 <i class="far fa-user icon"></i>
             </div>
         </header>

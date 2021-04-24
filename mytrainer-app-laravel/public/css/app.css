@@ -19,7 +19,7 @@ header {
   display: table;
 }
 .head-section a {
-  color: #333333;
+  color: #696969;
   text-decoration: none;
   vertical-align: middle;
   display: table-cell;
@@ -48,7 +48,7 @@ header {
 .menulist {
   margin: 0;
   padding: 10px 0 10px 13%;
-  color: #333333;
+  color: #696969;
 }
 
 .sidebar {
@@ -80,4 +80,31 @@ header {
 }
 .main-content p {
   margin: 0;
+}
+
+.create-menu-sec {
+  margin: 25px;
+  padding: 15px 10px;
+}
+.create-menu-sec a {
+  background-color: #333333;
+  opacity: 0.7;
+  text-decoration: none;
+  color: #fff;
+  padding: 10px;
+}
+.create-menu-sec p {
+  display: inline-block;
+  color: #696969;
+}
+
+.create-menu-sec:hover {
+  background-color: #bdbbbb;
+}
+.create-menu-sec:hover p {
+  color: #fff;
+}
+
+.image-list-sec img {
+  height: 100px;
 }
