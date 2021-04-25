@@ -28,7 +28,10 @@ Route::group(['prefix' => 'home'], function() {
     // Route::get('/{menuListName}/addmenu', 'Controller@aaa');
 });
 
-Route::get('/search', 'SearchController@index');
+Route::group(['prefix' => 'search'], function() {
+    Route::get('/', 'SearchController@index');
+    Route::post('/', 'SearchController@search');
+});
 
 // Route::get('/user', 'Controller@aaa');
 

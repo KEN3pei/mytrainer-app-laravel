@@ -35,7 +35,7 @@ header {
 }
 
 .head-section a:hover, .head-section i:hover {
-  opacity: 0.5;
+  background-color: #eee787;
 }
 
 .top-of-sidebar {
@@ -112,6 +112,20 @@ header {
 
 .create-menu-sec:hover p {
   color: #fff;
+}
+
+.search-form {
+  margin: 30px;
+  text-align: center;
+}
+
+.search-form input, .search-form button {
+  padding: 3px 30px;
+  border: 0;
+}
+
+.search-form button:hover {
+  background-color: #bdbbbb;
 }
 
 .image-list-sec img {
