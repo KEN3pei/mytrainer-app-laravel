@@ -11,7 +11,8 @@ class TrainingMenuItemService
         if(!$keyword){
             return null;
         }
-        $items = \App\DataProvider\Eloquent\TrainingMenuItem::where('item_name', 'like', "%$keyword%")->get();
+        $items = TrainingMenuItem::where('item_name', 'like', "%$keyword%")->get();
+        // dd($items);
         $imgUrls = [];
         foreach($items as $item){
             $imgUrls[] = $item->s3_img_url;

@@ -30,7 +30,7 @@ Route::group(['prefix' => 'home'], function() {
 
 Route::group(['prefix' => 'search'], function() {
     Route::get('/', 'SearchController@index');
-    Route::post('/', 'SearchController@search');
+    Route::get('/{keyWord}', 'SearchController@search');
 });
 
 // Route::get('/user', 'Controller@aaa');

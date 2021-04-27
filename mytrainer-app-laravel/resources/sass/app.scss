@@ -73,7 +73,7 @@ header{
     left: 20%;
     height: 89vh;
     width: 80%;
-    margin-left: 1px;
+    // margin-left: 1px;
     margin-top: 1px;
     p {
         margin: 0;
@@ -119,7 +119,26 @@ header{
 }
 
 .image-list-sec {
+    text-align: center;
     img{
-        height: 100px;
+        height: 130px;
+        width: 180px;
+    }
+}
+
+// pagination bootstrap-4 
+.pagination {
+    font-size: 0;
+    margin: 10px;
+    .item {
+        font-size: 16px;
+        color: #333333;
+        padding: 10px;
+        background-color: #fff;
+        text-decoration: none;
+        border-right: 1px solid #333333;
+    }
+    .item:hover {
+        background-color: rgb(151, 147, 86);
     }
 }

@@ -3,20 +3,28 @@
     <div>
         <div>
             <div class="search-form">
-                <form action="/search" method="POST">
+                <form action="/search/keyWord" method="GET">
                     @csrf
-                    <input type="text" name="search-keyword">
+                    <input type="text" name="keyWord">
                     <button type="submit" value="検索">search</button>
                 </form>
             </div>
             <div class="image-list-sec">
-                @if ($imgUrls)
-                    @foreach ($imgUrls as $url)
-                        <img src="https://mytrainer-imgs.s3-ap-northeast-1.amazonaws.com/{{ $url }}" >
-                    @endforeach
-                @else
-                    <p>表示する画像はありません</p>
-                @endif
+                @isset ($s3imgUrls)
+                    @foreach ($s3imgUrls as $item)
+                        <img src="https://mytrainer-imgs.s3-ap-northeast-1.amazonaws.com/{{ $item }}" >
+                        @endforeach
+                    @endisset
+                @isset ($imgUrls)
+                   
+                    <div class="container">
+                        @foreach ($imgUrls as $item)
+                            <img src="https://mytrainer-imgs.s3-ap-northeast-1.amazonaws.com/{{ $item }}" >
+                        @endforeach
+                    </div>
+
+                    {{ $imgUrls->links('vendor/pagination/semantic-ui') }}
+                    @endisset
             </div>
         </div>
     </div>
