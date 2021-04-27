@@ -179,7 +179,7 @@ return [
          * origin provider (2021_4)
          */
         App\Providers\S3ServiceProvider::class,
-        // App\Providers\UtilServiceProvider::class,
+        App\Providers\SearchPaginationProvider::class,
 
     ],
 

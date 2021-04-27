@@ -3,11 +3,11 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use App\Services\Util;
+use App\Services\SearchPaginationService;
 
-class UtilServiceProvider extends ServiceProvider
+class SearchPaginationProvider extends ServiceProvider
 {
-    /**
+     /**
      * Register services.
      *
      * @return void
@@ -15,8 +15,8 @@ class UtilServiceProvider extends ServiceProvider
     public function register()
     {
         //
-        $this->app->bind('util', function(){
-            return new Util(); //ここでエラーを吐いている
+        $this->app->singleton('paginator', function(){
+            return new SearchPaginationService(); 
         });
     }
 
