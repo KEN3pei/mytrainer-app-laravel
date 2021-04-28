@@ -105,6 +105,43 @@ header{
     }
 }
 
+.hide-popup {
+    display: none;
+    z-index: 10000;
+    height: 100vh;
+    width: 100%;
+    background-color: #333333;
+    opacity: 0.3;
+    position: absolute;
+}
+.popup {
+    .popup-form {
+        padding: 9vh 0 5vh 0;
+        height: 10vh;
+        width: 50%;
+        margin: 30vh auto 0 auto; // 30vhの理由 100vh - (9vh+5vh) - 10vh  = 76vh / 2 = 38vh = 半分 -> 半分よりちょい上 = 38vh以下
+        text-align: center;
+        background-color: #bdbbbb;
+        position: relative;
+        .fa-times {
+            position: absolute;
+            top: 0;
+            right: 0;
+            font-size: 30px;
+        }
+        input {
+            border: none;
+            outline: 0;
+            font-size: 30px;
+        }
+        button {
+            margin: 20px;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+    }
+}
+
 // search.blade.php
 .search-form {
     margin: 30px;

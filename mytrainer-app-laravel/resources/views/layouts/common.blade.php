@@ -14,6 +14,18 @@
     </head>
 
     <body>
+        <div class="hide-popup" id="hidden-section">
+            <div class="popup">
+                <div class="popup-form">
+                <i class="fas fa-times" id="close-icon"></i>
+                <form action="/home/createList" method="POST">
+                    @csrf
+                    <input type="text" name="listName" placeholder="create list name"></br>
+                    <button type="submit" value="リスト名">OK!</button>
+                </form>
+                </div>
+            </div>
+        </div>
         <header>
             <div class="head-section">
                 <a href="/home">home</a>
@@ -31,5 +43,7 @@
         <div class="main-content">
             @yield('content')
         </div>
+    
+    <script src="{{ mix('js/app.js') }}"></script>
     </body>
 </html>

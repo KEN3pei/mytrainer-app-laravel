@@ -1,17 +1,24 @@
 <?php
 namespace App\Services;
 
-use App\DataProvider\Eloquent\TrainingMenuItem;
+use App\DataProvider\TrainingMenuItemRepositoryInterface;
  
 class TrainingMenuItemService
 {
+    private $training_menu_item;
+
+    public function __construct(TrainingMenuItemRepositoryInterface $training_menu_item)
+    {
+        $this->training_menu_item = $training_menu_item;
+    }
+
     public function KeywordToFind($keyword) 
     {
         // 記号、数字は受け付けないようにしたい
         if(!$keyword){
             return null;
         }
-        $items = TrainingMenuItem::where('item_name', 'like', "%$keyword%")->get();
+        $items = $this->training_menu_item->search($keyword);
         // dd($items);
         $imgUrls = [];
         foreach($items as $item){

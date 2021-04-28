@@ -10,4 +10,8 @@ class HomeController extends Controller
         return view('home');
     }
 
+    public function createList(Request $request){
+        dd($request->input('listName'));
+        return view('home');
+    }
 }

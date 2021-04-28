@@ -1842,6 +1842,18 @@ module.exports = {
 
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
+var hiddenPopup = document.getElementById('hidden-section');
+var closeIcon = document.getElementById('close-icon');
+var createMenu = document.getElementById('create-menu');
+
+createMenu.onclick = function () {
+  hiddenPopup.style.display = "block";
+};
+
+closeIcon.onclick = function () {
+  hiddenPopup.style.display = "none";
+};
+
 /***/ }),
 
 /***/ "./resources/js/bootstrap.js":

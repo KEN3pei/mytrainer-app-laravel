@@ -24,7 +24,8 @@ Route::get('/', function () {
 
 Route::group(['prefix' => 'home'], function() {
     Route::get('/', 'HomeController@index');
-    Route::get('/{menuName}', 'HomeController@aaa');
+    // Route::get('/{menuName}', 'HomeController@aaa');
+    Route::post('/createList', 'HomeController@createList');
     // Route::get('/{menuListName}/addmenu', 'Controller@aaa');
 });
 

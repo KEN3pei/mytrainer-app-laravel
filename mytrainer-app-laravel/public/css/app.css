@@ -104,6 +104,42 @@ header {
   color: #fff;
 }
 
+.hide-popup {
+  display: none;
+  z-index: 10000;
+  height: 100vh;
+  width: 100%;
+  background-color: #333333;
+  opacity: 0.3;
+  position: absolute;
+}
+
+.popup .popup-form {
+  padding: 9vh 0 5vh 0;
+  height: 10vh;
+  width: 50%;
+  margin: 30vh auto 0 auto;
+  text-align: center;
+  background-color: #bdbbbb;
+  position: relative;
+}
+.popup .popup-form .fa-times {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 30px;
+}
+.popup .popup-form input {
+  border: none;
+  outline: 0;
+  font-size: 30px;
+}
+.popup .popup-form button {
+  margin: 20px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
 .search-form {
   margin: 30px;
   text-align: center;
