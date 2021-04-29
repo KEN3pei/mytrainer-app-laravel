@@ -13,8 +13,7 @@ class SearchPaginationService
         $keyWord = $request->query("keyWord");
         $now_url = $url . "?_token=" . $_token . "&keyWord=" . $keyWord;
         $display_limit = 3;
-        // dd($array);
-        $arrayOfNum = (((int)$request->page) - 1) * $display_limit;
+        $arrayOfNum = ((int)($request->page ?? 1) - 1) * $display_limit;
         $result = array_slice( $array, $arrayOfNum, $display_limit);
 
         $itemPaginate = $this->pagination(
