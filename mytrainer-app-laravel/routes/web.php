@@ -14,18 +14,12 @@ use App\Facades\Util;
 |
 */
 
-Route::get('/', function () {
-    // dd(app());
-    // $util = Util::getMessage();
-    $util = app()->make('util');
-    dd($util->getMessage());
-    return view('welcome');
-});
+Route::get('/', 'TopController@index');
 
-Route::group(['prefix' => 'home'], function() {
-    Route::get('/', 'HomeController@index');
-    // Route::get('/{menuName}', 'HomeController@aaa');
-    Route::post('/createList', 'HomeController@createList');
+Route::group(['prefix' => 'top'], function() {
+    Route::get('/', 'TopController@index');
+    // Route::get('/{menuName}', 'TopController@aaa');
+    Route::post('/createList', 'TopController@createList');
     // Route::get('/{menuListName}/addmenu', 'Controller@aaa');
 });
 
@@ -34,10 +28,17 @@ Route::group(['prefix' => 'search'], function() {
     Route::get('/{keyWord}', 'SearchController@search');
 });
 
-// Route::get('/user', 'Controller@aaa');
+Route::group(['prefix' => 'setting'], function() {
+    Route::get('/', 'SettingController@index');
+    Route::get('/logout', 'SettingController@logout');
+});
 
 // Route::get('/login', 'Controller@aaa');
 
 // Route::get('/signin', 'Controller@aaa');
 
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

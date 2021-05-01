@@ -9,6 +9,6 @@ createMenu.onclick = () => {
     hiddenPopup.style.display = "block";
 };
 closeIcon.onclick = () => {
-    hiddenPopup.style.display = "none";
+    hiddenPopup.style.display = "block";
 }
 

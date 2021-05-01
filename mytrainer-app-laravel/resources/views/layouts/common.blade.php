@@ -10,7 +10,7 @@
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css">
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;600&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/main.css') }}">
     </head>
 
     <body>
@@ -28,9 +28,9 @@
         </div>
         <header>
             <div class="head-section">
-                <a href="/home">home</a>
+                <a href="/top">home</a>
                 <a href="/search">search</a>
-                <i class="far fa-user icon"></i>
+                <a href="/setting"><i class="far fa-user icon"></i></a>
             </div>
         </header>
         <div class="top-of-sidebar"></div>
