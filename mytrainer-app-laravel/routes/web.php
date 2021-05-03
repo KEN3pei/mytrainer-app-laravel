@@ -14,29 +14,25 @@ use App\Facades\Util;
 |
 */
 
-Route::get('/', function () {
-    // dd(app());
-    // $util = Util::getMessage();
-    $util = app()->make('util');
-    dd($util->getMessage());
-    return view('welcome');
-});
+Route::get('/', 'TopController@index')->middleware('auth');
 
-Route::group(['prefix' => 'home'], function() {
-    Route::get('/', 'HomeController@index');
-    Route::get('/{menuName}', 'HomeController@aaa');
+Route::group(['prefix' => 'top'], function() {
+    Route::get('/', 'TopController@index')->middleware('auth');
+    Route::post('/', 'TopController@createList');
+    Route::get('/menulist', 'TopController@show');
     // Route::get('/{menuListName}/addmenu', 'Controller@aaa');
 });
 
 Route::group(['prefix' => 'search'], function() {
-    Route::get('/', 'SearchController@index');
-    Route::post('/', 'SearchController@search');
+    Route::get('/', 'SearchController@index')->middleware('auth');
+    Route::get('/{keyWord}', 'SearchController@search')->middleware('auth');
 });
 
-// Route::get('/user', 'Controller@aaa');
+Route::group(['prefix' => 'setting'], function() {
+    Route::get('/', 'SettingController@index')->middleware('auth');
+    Route::get('/logout', 'SettingController@logout')->middleware('auth');
+});
 
-// Route::get('/login', 'Controller@aaa');
+Auth::routes();
 
-// Route::get('/signin', 'Controller@aaa');
-
-
+Route::get('/home', 'HomeController@index')->name('home');

@@ -3,6 +3,7 @@ body {
   margin: 0;
   background-color: #e8e8e8;
   cursor: pointer;
+  letter-spacing: 0.05em;
 }
 
 header {
@@ -18,7 +19,6 @@ header {
   height: 10vh;
   display: table;
 }
-
 .head-section a {
   color: #696969;
   text-decoration: none;
@@ -26,14 +26,12 @@ header {
   display: table-cell;
   padding-right: 15px;
 }
-
 .head-section i {
   vertical-align: middle;
   display: table-cell;
   padding-right: 15px;
   font-size: 23px;
 }
-
 .head-section a:hover, .head-section i:hover {
   background-color: #eee787;
 }
@@ -53,6 +51,9 @@ header {
   padding: 10px 0 10px 13%;
   color: #696969;
 }
+.menulist a {
+  display: block;
+}
 
 .sidebar {
   height: 89vh;
@@ -63,13 +64,11 @@ header {
   top: 0;
   left: 0;
 }
-
 .sidebar p {
   margin: 0;
   padding: 0 0 5px 13%;
   color: #e8e8e8;
 }
-
 .sidebar p:hover {
   background-color: #979356;
 }
@@ -82,7 +81,6 @@ header {
   width: 80%;
   margin-top: 1px;
 }
-
 .main-content p {
   margin: 0;
 }
@@ -91,7 +89,6 @@ header {
   margin: 25px;
   padding: 15px 10px;
 }
-
 .create-menu-sec a {
   background-color: #333333;
   opacity: 0.7;
@@ -99,7 +96,6 @@ header {
   color: #fff;
   padding: 10px;
 }
-
 .create-menu-sec p {
   display: inline-block;
   color: #696969;
@@ -108,7 +104,6 @@ header {
 .create-menu-sec:hover {
   background-color: #bdbbbb;
 }
-
 .create-menu-sec:hover p {
   color: #fff;
 }
@@ -132,20 +127,17 @@ header {
   background-color: #bdbbbb;
   position: relative;
 }
-
 .popup .popup-form .fa-times {
   position: absolute;
   top: 0;
   right: 0;
   font-size: 30px;
 }
-
 .popup .popup-form input {
   border: none;
   outline: 0;
   font-size: 30px;
 }
-
 .popup .popup-form button {
   margin: 20px;
   padding: 5px 10px;
@@ -156,12 +148,10 @@ header {
   margin: 30px;
   text-align: center;
 }
-
 .search-form input, .search-form button {
   padding: 3px 30px;
   border: 0;
 }
-
 .search-form button:hover {
   background-color: #bdbbbb;
 }
@@ -169,7 +159,6 @@ header {
 .image-list-sec {
   text-align: center;
 }
-
 .image-list-sec img {
   height: 130px;
   width: 180px;
@@ -178,8 +167,8 @@ header {
 .pagination {
   font-size: 0;
   margin: 10px;
+  display: inline-block;
 }
-
 .pagination .item {
   font-size: 16px;
   color: #333333;
@@ -188,7 +177,107 @@ header {
   text-decoration: none;
   border-right: 1px solid #333333;
 }
-
 .pagination .item:hover {
   background-color: #979356;
+}
+
+.setting-main {
+  height: 80vh;
+  width: 60%;
+  background-color: #fff;
+  margin: 30px auto 0 auto;
+  border: 1px solid;
+  border-radius: 10px;
+  position: relative;
+}
+
+.setting-contents {
+  width: 80%;
+  margin: 0 auto;
+}
+.setting-contents p {
+  margin-top: 30px;
+  padding-bottom: 13px;
+  border-bottom: 1px solid #bdbbbb;
+}
+.setting-contents label {
+  display: inline-block;
+  margin-top: 18px;
+}
+.setting-contents button {
+  letter-spacing: 0.05em;
+  margin-top: 30px;
+  padding: 3px 20px;
+}
+.setting-contents a {
+  position: absolute;
+  bottom: 18px;
+  right: 18px;
+}
+
+.carousel {
+  width: 50%;
+  margin: 40px auto;
+}
+.carousel .carousel-inner {
+  position: relative;
+  width: 200px;
+  overflow: hidden;
+  border: 1px solid;
+  border-radius: 50%;
+  margin: 0 auto;
+}
+.carousel .carousel-indicators {
+  bottom: -50px !important;
+}
+
+.carousel-item img {
+  height: 200px;
+}
+
+.add-menu-list {
+  width: 90%;
+  margin: 60px auto 30px auto;
+  background-color: #fff;
+  height: 45vh;
+  border: 1px solid;
+}
+.add-menu-list .add-items {
+  height: 10vh;
+  margin: 10px;
+}
+.table-wrap {
+  overflow-x: scroll;
+}
+
+.table {
+  width: 100%;
+  white-space: nowrap;
+  border-collapse: separate;
+  border-spacing: 13px 15px;
+}
+.table img {
+  height: 100%;
+  width: 100px;
+}
+.table p {
+  display: inline-block;
+  overflow: hidden;
+  width: 150px;
+  margin-right: 10px;
+}
+.table span {
+  padding: 10px 13px;
+  background-color: #e8e8e8;
+  margin-right: 10px;
+}
+.table span:hover {
+  opacity: 0.7;
+}
+
+.table th,
+.table td {
+  padding: 4px 8px;
+  border: 2px solid #eee;
+  height: 10vh;
 }
