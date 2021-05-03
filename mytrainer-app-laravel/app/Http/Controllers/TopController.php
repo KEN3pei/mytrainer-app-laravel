@@ -47,9 +47,9 @@ class TopController extends Controller
         $user_id = Auth::user()->id;
         $name_urls = $this->training_menu_list->getMenuItems($listname, $user_id);
 
-        $all_item = $this->training_menu_items->getAllItem();
-        // dd($all_item);
-        
+        // すでに追加済みのメニューの表示を変えるためにFragをつける
+        $all_item = $this->training_menu_items->addFragItems($name_urls);
+
         return view('showlist', [
             'lists' => $lists, 
             'name_urls' => $name_urls,

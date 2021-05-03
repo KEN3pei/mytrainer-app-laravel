@@ -50,7 +50,11 @@
               <td>
                 <img src="https://mytrainer-imgs.s3-ap-northeast-1.amazonaws.com/{{ $item->s3_img_url }}">
                 <p>{{$item->item_name}}</p>
+                @if($item->frag)
+                <i class="fas fa-check-circle"></i>
+                @else
                 <span>+</span>
+                @endif
               </td>
               @if(($loop->index + 1) % ceil(count($all_item) / 3) === 0)
               </tr>

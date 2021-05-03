@@ -1,6 +1,7 @@
 <?php
 namespace App\Services;
 
+use App\DataProvider\Eloquent\TrainingMenuItem;
 use App\DataProvider\TrainingMenuItemRepositoryInterface;
  
 class TrainingMenuItemService
@@ -19,7 +20,6 @@ class TrainingMenuItemService
             return null;
         }
         $items = $this->training_menu_item->search($keyword);
-        // dd($items);
         $imgUrls = [];
         foreach($items as $item){
             $imgUrls[] = $item->s3_img_url;
@@ -27,8 +27,23 @@ class TrainingMenuItemService
         return $imgUrls;
     }
 
-    public function getAllItem(){
+    public function getAllItem()
+    {
         $all_item = $this->training_menu_item->getAllItem();
+        return $all_item;
+    }
+
+    public function addFragItems(object $user_items)
+    {
+        $all_item = $this->getAllItem();
+        foreach($user_items as $user_item){
+            foreach($all_item as $key => $item){
+                if($user_item->s3_img_url === $item->s3_img_url){ 
+                    $item['frag'] = true;
+                    break;
+                }
+            }
+        }
         return $all_item;
     }
 }
