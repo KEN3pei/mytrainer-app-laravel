@@ -20,7 +20,7 @@ class TrainingMenuList extends Model
     {
         return $this->belongsToMany(
             'App\DataProvider\Eloquent\TrainingMenuItem', 
-            'item_belonging_list',
+            'item_belonging_lists',
             'list_id', 
             'item_id'
         );

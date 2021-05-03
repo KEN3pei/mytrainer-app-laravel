@@ -53,7 +53,7 @@
                 @if($item->frag)
                 <i class="fas fa-check-circle"></i>
                 @else
-                <span>+</span>
+                <span class="addItemButton" id="{{$item->item_id}}">+</span>
                 @endif
               </td>
               @if(($loop->index + 1) % ceil(count($all_item) / 3) === 0)
