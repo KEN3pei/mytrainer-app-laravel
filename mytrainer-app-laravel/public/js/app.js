@@ -1840,19 +1840,30 @@ module.exports = {
   \*****************************/
 /***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
 
-__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
+__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js"); // let hiddenPopup = document.getElementById('hidden-section');
+// let closeIcon = document.getElementById('close-icon');
+// let createMenu = document.getElementById('create-menu');
+// createMenu.onclick = () => {
+//     hiddenPopup.style.display = "block";
+// };
+// closeIcon.onclick = () => {
+//     hiddenPopup.style.display = "block";
+// }
 
-var hiddenPopup = document.getElementById('hidden-section');
-var closeIcon = document.getElementById('close-icon');
-var createMenu = document.getElementById('create-menu');
 
-createMenu.onclick = function () {
-  hiddenPopup.style.display = "block";
-};
-
-closeIcon.onclick = function () {
-  hiddenPopup.style.display = "block";
-};
+var addItemButtons = Array.from(document.getElementsByClassName('addItemButton'));
+addItemButtons.forEach(function (addItemButton) {
+  addItemButton.onclick = function () {
+    //FIXME 連続クリックに対応できていない
+    axios.post('/top/menulist', {
+      item_id: addItemButton.id,
+      list_name: location.search.slice(10)
+    }).then(function (response) {
+      // console.log(response.data);
+      location.reload();
+    });
+  };
+});
 
 /***/ }),
 

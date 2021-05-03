@@ -18,6 +18,6 @@ class TrainingMenuItem extends Model
 
     public function trainingMenuLists()
     {
-        return $this->belongsToMany('App\DataProvider\Eloquent\TrainingMenuList', 'item_belonging_list');
+        return $this->belongsToMany('App\DataProvider\Eloquent\TrainingMenuList', 'item_belonging_lists');
     }
 }

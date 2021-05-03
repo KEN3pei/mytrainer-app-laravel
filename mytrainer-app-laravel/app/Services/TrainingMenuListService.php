@@ -36,9 +36,15 @@ class TrainingMenuListService
    public function getMenuItems(string $list_name, int $user_id)
    {
         // list_nameからid取得
-        $list_id = $this->training_menu_list->getListId($list_name, $user_id);
+        $list_id = $this->getListId($list_name, $user_id);
         // idからitemのimg配列を取得
         $name_urls = $this->training_menu_list->getItemImages($list_id);
         return $name_urls;
+   }
+
+   public function getListId($list_name, int $user_id)
+   {
+        $list_id = $this->training_menu_list->getListId($list_name, $user_id);
+        return $list_id;
    }
 }

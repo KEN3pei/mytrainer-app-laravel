@@ -22,6 +22,10 @@ class AppServiceProvider extends ServiceProvider
             \App\DataProvider\TrainingMenuListRepositoryInterface::class,
             \App\DataProvider\TrainingMenuListRepository::class
         );
+        $this->app->singleton(
+            \App\DataProvider\ItemBelongingListRepositoryInterface::class,
+            \App\DataProvider\ItemBelongingListRepository::class
+        );
     }
 
     /**

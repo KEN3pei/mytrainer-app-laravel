@@ -19,8 +19,8 @@ Route::get('/', 'TopController@index')->middleware('auth');
 Route::group(['prefix' => 'top'], function() {
     Route::get('/', 'TopController@index')->middleware('auth');
     Route::post('/', 'TopController@createList');
-    Route::get('/menulist', 'TopController@show');
-    // Route::get('/{menuListName}/addmenu', 'Controller@aaa');
+    Route::get('/menulist', 'TopController@show')->middleware('auth');
+    Route::post('/menulist', 'TopController@addItem');
 });
 
 Route::group(['prefix' => 'search'], function() {
