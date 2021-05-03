@@ -26,4 +26,9 @@ class TrainingMenuItemService
         }
         return $imgUrls;
     }
+
+    public function getAllItem(){
+        $all_item = $this->training_menu_item->getAllItem();
+        return $all_item;
+    }
 }

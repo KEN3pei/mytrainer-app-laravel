@@ -6,6 +6,7 @@
            <!-- <a href="">logout</a> -->
                 <p>Edit profile</p>
                 <form action="">
+                    @csrf
                     <label for="name-label">Name</label><br>
                     <input type="text" name="name" id="name-label"><br>
                     <label for="name-label">E-mail</label><br>

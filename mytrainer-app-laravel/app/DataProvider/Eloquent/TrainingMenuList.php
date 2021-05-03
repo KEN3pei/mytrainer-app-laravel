@@ -7,8 +7,22 @@ use Illuminate\Database\Eloquent\Model;
 class TrainingMenuList extends Model
 {
     protected $primaryKey = 'list_id';
-    // ユーザからの変更は受け付けない
+
     protected $fillable = [
+        'list_id',
         'list_name',
+        'user_id',
+        'created_at',
+        'updated_at'
     ];
+
+    public function trainingMenuItems()
+    {
+        return $this->belongsToMany(
+            'App\DataProvider\Eloquent\TrainingMenuItem', 
+            'item_belonging_list',
+            'list_id', 
+            'item_id'
+        );
+    }
 }

@@ -50,6 +50,9 @@ body {
     margin: 0;
     padding: 10px 0 10px 13%;
     color: #696969;
+    a {
+      display: block;
+    }
   }
   
   .sidebar {
@@ -166,6 +169,7 @@ body {
   .pagination {
     font-size: 0;
     margin: 10px;
+    display: inline-block;
     .item {
         font-size: 16px;
         color: #333333;
@@ -210,4 +214,75 @@ body {
       bottom: 18px;
       right: 18px;
     }
+  }
+  .carousel {
+    width: 50%;
+    margin: 40px auto;
+    .carousel-inner {
+      position: relative;
+      width: 200px;
+      overflow: hidden;
+      border: 1px solid;
+      border-radius: 50%;
+      margin: 0 auto;
+    }
+    .carousel-indicators {
+      bottom: -50px !important;
+    }
+  }
+  .carousel-item {
+    img {
+      height: 200px;
+    }
+  }
+
+  .add-menu-list {
+    width: 90%;
+    margin: 60px auto 30px auto;
+    background-color: #fff;
+    height: 45vh;
+    border: 1px solid;
+    .add-items {
+      // background-color: #e8e8e8 !important;
+      height: 10vh;
+      margin: 10px;
+      img {
+        // height: 10%;
+      }
+    }
+  }
+
+  .table-wrap {
+    overflow-x: scroll;
+  }
+  .table {
+    width: 100%;
+    // border-collapse: collapse;
+    white-space: nowrap;
+    border-collapse: separate;
+    border-spacing: 13px 15px;
+    img {
+      height: 100%;
+      width: 100px;
+    }
+    p {
+      display: inline-block;
+      overflow: hidden;
+      width: 150px;
+      margin-right: 10px;
+    }
+    span {
+      padding: 10px 13px;
+      background-color: #e8e8e8;
+      margin-right: 10px;
+    }
+    span:hover {
+      opacity: 0.7;
+    }
+  }
+  .table th,
+  .table td {
+    padding: 4px 8px;
+    border: 2px solid #eee;
+    height: 10vh;
   }

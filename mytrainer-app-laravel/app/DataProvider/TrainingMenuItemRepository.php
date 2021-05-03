@@ -18,4 +18,10 @@ class TrainingMenuItemRepository implements TrainingMenuItemRepositoryInterface
         $items = $this->training_menu_item->where('item_name', 'like', "%$keyword%")->get();
         return $items;
     }
+
+    public function getAllItem(){
+        $all_item = $this->training_menu_item->get();
+        return $all_item;
+    }
+    
 }

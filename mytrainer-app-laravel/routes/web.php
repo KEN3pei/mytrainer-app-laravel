@@ -14,30 +14,24 @@ use App\Facades\Util;
 |
 */
 
-Route::get('/', 'TopController@index');
+Route::get('/', 'TopController@index')->middleware('auth');
 
 Route::group(['prefix' => 'top'], function() {
-    Route::get('/', 'TopController@index');
-    // Route::get('/{menuName}', 'TopController@aaa');
-    Route::post('/createList', 'TopController@createList');
+    Route::get('/', 'TopController@index')->middleware('auth');
+    Route::post('/', 'TopController@createList');
+    Route::get('/menulist', 'TopController@show');
     // Route::get('/{menuListName}/addmenu', 'Controller@aaa');
 });
 
 Route::group(['prefix' => 'search'], function() {
-    Route::get('/', 'SearchController@index');
-    Route::get('/{keyWord}', 'SearchController@search');
+    Route::get('/', 'SearchController@index')->middleware('auth');
+    Route::get('/{keyWord}', 'SearchController@search')->middleware('auth');
 });
 
 Route::group(['prefix' => 'setting'], function() {
-    Route::get('/', 'SettingController@index');
-    Route::get('/logout', 'SettingController@logout');
+    Route::get('/', 'SettingController@index')->middleware('auth');
+    Route::get('/logout', 'SettingController@logout')->middleware('auth');
 });
-
-// Route::get('/login', 'Controller@aaa');
-
-// Route::get('/signin', 'Controller@aaa');
-
-
 
 Auth::routes();
 

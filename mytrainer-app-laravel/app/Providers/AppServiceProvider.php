@@ -14,9 +14,13 @@ class AppServiceProvider extends ServiceProvider
     public function register()
     {
         //
-        $this->app->bind(
+        $this->app->singleton(
             \App\DataProvider\TrainingMenuItemRepositoryInterface::class,
             \App\DataProvider\TrainingMenuItemRepository::class
+        );
+        $this->app->singleton(
+            \App\DataProvider\TrainingMenuListRepositoryInterface::class,
+            \App\DataProvider\TrainingMenuListRepository::class
         );
     }
 

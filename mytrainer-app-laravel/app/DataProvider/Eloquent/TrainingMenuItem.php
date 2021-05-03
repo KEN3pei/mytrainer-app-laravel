@@ -15,4 +15,9 @@ class TrainingMenuItem extends Model
         'created_at',
         'updated_at'
     ];
+
+    public function trainingMenuLists()
+    {
+        return $this->belongsToMany('App\DataProvider\Eloquent\TrainingMenuList', 'item_belonging_list');
+    }
 }
