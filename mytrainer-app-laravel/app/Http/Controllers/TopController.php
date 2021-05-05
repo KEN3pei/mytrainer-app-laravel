@@ -80,7 +80,8 @@ class TopController extends Controller
     {
         // dd($request->list_id);
         $list_id = $request->list_id;
+        $this->training_menu_list->delete($list_id);
 
-        return $list_id;
+        return;
     }
 }

@@ -44,4 +44,9 @@ class TrainingMenuListRepository implements TrainingMenuListRepositoryInterface
         $name_urls = $this->training_menu_List->find($id)->trainingMenuItems()->get(['item_name', 's3_img_url']);
         return $name_urls;
     }
+
+    public function delete(int $id)
+    {
+        $this->training_menu_List->where('list_id', $id)->delete();
+    }
 }

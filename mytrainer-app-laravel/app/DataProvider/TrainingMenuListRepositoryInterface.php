@@ -9,4 +9,5 @@ interface TrainingMenuListRepositoryInterface
     public function existCheckName(string $list_name);
     public function getListId($list_name, int $user_id);
     public function getItemImages(int $id);
+    public function delete(int $id);
 }

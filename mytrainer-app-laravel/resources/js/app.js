@@ -39,7 +39,7 @@ deletePopups.forEach(deletePopup => {
           })
           .then(function (response) {
                 console.log(response.data);
-                // location.reload();
+                location.reload();
           })
     }
 });

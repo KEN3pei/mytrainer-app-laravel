@@ -1880,7 +1880,8 @@ deletePopups.forEach(function (deletePopup) {
     axios.post('/top/menulist/delete', {
       list_id: deletePopup.id
     }).then(function (response) {
-      console.log(response.data); // location.reload();
+      console.log(response.data);
+      location.reload();
     });
   };
 });
