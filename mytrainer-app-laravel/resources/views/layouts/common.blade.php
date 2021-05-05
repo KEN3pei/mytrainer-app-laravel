@@ -38,6 +38,8 @@
         <div class="sidebar">
             <div class="menulist">▽ メニューリスト</div>
             @foreach($lists as $list)
+                <span class="three-point">︙<span class="delete-popup" id="{{ $list->list_id }}">削除</span></span>
+                <!-- <span class="delete-popup">削除</span> -->
                 <p><a href="/top/menulist?listname={{ $list->list_name }}">{{ $list->list_name }}</a></p>
             @endforeach
         </div>

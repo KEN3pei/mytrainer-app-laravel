@@ -73,7 +73,14 @@ class TopController extends Controller
         $list_id = $this->training_menu_list->getListId($list_name, $user_id);
         // list_idとitem_idでDBにセットする
         $result = $this->item_belonging_list->addItemAndListID($list_id, $item_id);
-
         return $result;
+    }
+
+    public function delete(Request $request)
+    {
+        // dd($request->list_id);
+        $list_id = $request->list_id;
+
+        return $list_id;
     }
 }

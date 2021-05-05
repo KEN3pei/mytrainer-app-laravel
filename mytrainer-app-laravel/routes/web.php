@@ -21,6 +21,7 @@ Route::group(['prefix' => 'top'], function() {
     Route::post('/', 'TopController@createList');
     Route::get('/menulist', 'TopController@show')->middleware('auth');
     Route::post('/menulist', 'TopController@addItem');
+    Route::post('/menulist/delete', 'TopController@delete');
 });
 
 Route::group(['prefix' => 'search'], function() {
