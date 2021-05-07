@@ -50,6 +50,7 @@ class TrainingMenuListService
 
    public function delete(int $list_id)
    {
-        $this->training_menu_list->delete($list_id);
+        $result = $this->training_menu_list->delete($list_id);
+        return $result;
    }
 }

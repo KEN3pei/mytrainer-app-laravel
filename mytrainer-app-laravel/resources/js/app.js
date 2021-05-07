@@ -38,7 +38,7 @@ deletePopups.forEach(deletePopup => {
             list_id: deletePopup.id,
           })
           .then(function (response) {
-                console.log(response.data);
+                // console.log(response.data);
                 location.reload();
           })
     }

@@ -3,6 +3,7 @@
 namespace App\DataProvider;
 
 use App\DataProvider\Eloquent\TrainingMenuList;
+use Exception;
 
 class TrainingMenuListRepository implements TrainingMenuListRepositoryInterface
 {
@@ -47,6 +48,12 @@ class TrainingMenuListRepository implements TrainingMenuListRepositoryInterface
 
     public function delete(int $id)
     {
-        $this->training_menu_List->where('list_id', $id)->delete();
+        try{
+            $this->training_menu_List->find($id)->trainingMenuItems()->detach();
+            $this->training_menu_List->where('list_id', $id)->delete();
+            return true;
+        }catch(Exception $e){
+            return $e;
+        }       
     }
 }

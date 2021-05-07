@@ -78,10 +78,9 @@ class TopController extends Controller
 
     public function delete(Request $request)
     {
-        // dd($request->list_id);
         $list_id = $request->list_id;
-        $this->training_menu_list->delete($list_id);
+        $result = $this->training_menu_list->delete($list_id);
 
-        return;
+        return $result;
     }
 }
