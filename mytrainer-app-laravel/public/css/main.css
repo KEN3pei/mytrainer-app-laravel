@@ -4,6 +4,7 @@ body {
   background-color: #e8e8e8;
   cursor: pointer;
   letter-spacing: 0.05em;
+  position: relative;
 }
 
 header {
@@ -12,6 +13,51 @@ header {
   border-bottom: 1px solid #fff;
   position: relative;
 }
+@media (max-width: 480px) {
+  header {
+    height: 5vh;
+  }
+}
+header p {
+  display: none;
+  padding-top: 8px;
+  text-align: center;
+  color: #696969;
+}
+@media (max-width: 480px) {
+  header p {
+    display: block;
+  }
+}
+
+footer {
+  display: none;
+  position: absolute;
+  bottom: 0;
+  height: 10vh;
+  width: 100%;
+  background-color: darkkhaki;
+  border-bottom: 1px solid #fff;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: space-around;
+}
+@media (max-width: 480px) {
+  footer {
+    display: flex;
+  }
+}
+footer div {
+  width: 33%;
+  text-align: center;
+}
+footer div a {
+  color: #696969;
+  display: block;
+}
+footer div a:hover {
+  color: #fff;
+}
 
 .head-section {
   float: right;
@@ -19,17 +65,27 @@ header {
   height: 10vh;
   display: table;
 }
+@media (max-width: 480px) {
+  .head-section {
+    height: 5vh;
+  }
+}
 .head-section a {
   color: #696969;
   text-decoration: none;
   vertical-align: middle;
   display: table-cell;
   padding-right: 15px;
+  padding-left: 15px;
+}
+@media (max-width: 480px) {
+  .head-section a {
+    display: none;
+  }
 }
 .head-section i {
   vertical-align: middle;
   display: table-cell;
-  padding-right: 15px;
   font-size: 23px;
 }
 .head-section a:hover, .head-section i:hover {
@@ -44,6 +100,11 @@ header {
   position: absolute;
   top: 0;
   left: 0;
+}
+@media (max-width: 480px) {
+  .top-of-sidebar {
+    display: none;
+  }
 }
 
 .menulist {
@@ -63,6 +124,11 @@ header {
   position: relative;
   top: 0;
   left: 0;
+}
+@media (max-width: 480px) {
+  .sidebar {
+    display: none;
+  }
 }
 .sidebar .three-point {
   float: right;
@@ -93,6 +159,7 @@ header {
 }
 .sidebar p a {
   display: block;
+  color: #fff;
 }
 .sidebar p:hover {
   background-color: #979356;
@@ -105,6 +172,12 @@ header {
   height: 89vh;
   width: 80%;
   margin-top: 1px;
+}
+@media (max-width: 480px) {
+  .main-content {
+    width: 100%;
+    left: 0;
+  }
 }
 .main-content p {
   margin: 0;
@@ -138,8 +211,7 @@ header {
   z-index: 10000;
   height: 100vh;
   width: 100%;
-  background-color: #333333;
-  opacity: 0.3;
+  background-color: rgba(51, 51, 51, 0.4);
   position: absolute;
 }
 
@@ -151,6 +223,11 @@ header {
   text-align: center;
   background-color: #bdbbbb;
   position: relative;
+}
+@media (max-width: 480px) {
+  .popup .popup-form {
+    width: 100%;
+  }
 }
 .popup .popup-form .fa-times {
   position: absolute;
@@ -176,6 +253,11 @@ header {
   margin: 30px;
   text-align: center;
 }
+@media (max-width: 480px) {
+  .search-form {
+    margin: 0 30px 30px 30px;
+  }
+}
 .search-form input, .search-form button {
   padding: 3px 30px;
   border: 0;
@@ -186,6 +268,14 @@ header {
 
 .image-list-sec {
   text-align: center;
+  height: 75vh;
+  overflow: scroll;
+  overflow-x: hidden;
+}
+@media (max-width: 480px) {
+  .image-list-sec {
+    height: 65vh;
+  }
 }
 .image-list-sec img {
   height: 130px;
@@ -218,6 +308,12 @@ header {
   border-radius: 10px;
   position: relative;
 }
+@media (max-width: 480px) {
+  .setting-main {
+    height: 60vh;
+    width: 80%;
+  }
+}
 
 .setting-contents {
   width: 80%;
@@ -234,7 +330,7 @@ header {
 }
 .setting-contents button {
   letter-spacing: 0.05em;
-  margin-top: 30px;
+  margin-top: 20px;
   padding: 3px 20px;
 }
 .setting-contents a {
@@ -270,10 +366,16 @@ header {
   height: 45vh;
   border: 1px solid;
 }
+@media (max-width: 480px) {
+  .add-menu-list {
+    height: 42vh;
+  }
+}
 .add-menu-list .add-items {
   height: 10vh;
   margin: 10px;
 }
+
 .table-wrap {
   overflow-x: scroll;
 }
@@ -311,4 +413,37 @@ header {
   padding: 4px 8px;
   border: 2px solid #eee;
   height: 10vh;
+}
+
+.sp-menuLists {
+  display: none;
+}
+@media (max-width: 480px) {
+  .sp-menuLists {
+    display: block;
+  }
+}
+.sp-menuLists p {
+  margin: 25px;
+  background-color: #fff;
+}
+.sp-menuLists p a {
+  display: inline-block;
+  padding: 15px 10px;
+  color: #696969;
+  width: 80%;
+  overflow: hidden;
+}
+.sp-menuLists .three-point {
+  float: right;
+  padding: 15px 10px;
+}
+.sp-menuLists .three-point .delete-popup {
+  display: none;
+}
+.sp-menuLists .three-point .delete-popup:hover {
+  background-color: #bebcbc;
+}
+.sp-menuLists .three-point:hover {
+  background-color: #696969;
 }
