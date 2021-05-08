@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Services\TrainingMenuListService;
 use App\Services\UserService;
+use Illuminate\Support\Facades\Validator;
 
 class SettingController extends Controller
 {
@@ -26,12 +27,14 @@ class SettingController extends Controller
 
     public function edit(Request $request)
     {
-         //FIXME emailならvalidationをかける
-        // if($column === "email"){
-        //     varidation();
-        // }
         $column = $request->param;
         $data = $request->$column;
+         // emailならvalidationをかける
+        if($column === "email"){
+            if($this->emailValidate(['email' => $data])){
+                return redirect('/setting');
+            }
+        }
 
         $result = $this->user->edit($column, $data);
         return redirect('/setting');
@@ -41,5 +44,13 @@ class SettingController extends Controller
     {
         Auth::logout();
         return redirect('/login');
+    }
+
+    public function emailValidate(array $data)
+    {
+        $validated = Validator::make($data, [
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users']
+        ]);
+        return $validated->fails();
     }
 }
