@@ -1840,17 +1840,51 @@ module.exports = {
   \*****************************/
 /***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
 
-__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js"); // let hiddenPopup = document.getElementById('hidden-section');
-// let closeIcon = document.getElementById('close-icon');
-// let createMenu = document.getElementById('create-menu');
-// createMenu.onclick = () => {
-//     hiddenPopup.style.display = "block";
-// };
-// closeIcon.onclick = () => {
-//     hiddenPopup.style.display = "block";
-// }
+__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
+var hiddenSection = document.getElementById('hidden-section');
+var closeIcon = document.getElementById('close-icon');
+var createMenu = document.getElementById('create-menu');
 
+if (createMenu !== null) {
+  createMenu.onclick = function () {
+    hiddenSection.style.display = "block";
+  };
+
+  closeIcon.onclick = function () {
+    hiddenSection.style.display = "none";
+  };
+}
+
+var threePoints = Array.from(document.getElementsByClassName('three-point'));
+threePoints.forEach(function (threePoint) {
+  // threePoint.addEventListener('mouseover', () => {
+  //     threePoint.firstElementChild.style.display = "inline-block";
+  // }, false);
+  // threePoint.addEventListener('mouseleave', () => {
+  //     setTimeout(() => {
+  //         threePoint.firstElementChild.style.display = "none";
+  //     }, 2000);
+  // }, false);
+  threePoint.onclick = function () {
+    threePoint.firstElementChild.style.display = "inline-block";
+    setTimeout(function () {
+      threePoint.firstElementChild.style.display = "none";
+    }, 5000);
+  };
+});
+var deletePopups = Array.from(document.getElementsByClassName('delete-popup'));
+deletePopups.forEach(function (deletePopup) {
+  deletePopup.onclick = function () {
+    console.log(deletePopup.id);
+    axios.post('/top/menulist/delete', {
+      list_id: deletePopup.id
+    }).then(function (response) {
+      // console.log(response.data);
+      location.reload();
+    });
+  };
+});
 var addItemButtons = Array.from(document.getElementsByClassName('addItemButton'));
 addItemButtons.forEach(function (addItemButton) {
   addItemButton.onclick = function () {

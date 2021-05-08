@@ -47,4 +47,10 @@ class TrainingMenuListService
         $list_id = $this->training_menu_list->getListId($list_name, $user_id);
         return $list_id;
    }
+
+   public function delete(int $list_id)
+   {
+        $result = $this->training_menu_list->delete($list_id);
+        return $result;
+   }
 }

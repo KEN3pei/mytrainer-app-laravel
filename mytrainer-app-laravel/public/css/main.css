@@ -64,10 +64,35 @@ header {
   top: 0;
   left: 0;
 }
+.sidebar .three-point {
+  float: right;
+  padding: 0 10px;
+  color: #fff;
+  position: relative;
+}
+.sidebar .three-point:hover {
+  background-color: #696969;
+}
+.sidebar .delete-popup {
+  position: absolute;
+  top: 0;
+  width: 50px;
+  text-align: center;
+  background-color: #696969;
+  display: none;
+  z-index: 100;
+}
+.sidebar .delete-popup:hover {
+  opacity: 0.7;
+}
 .sidebar p {
   margin: 0;
-  padding: 0 0 5px 13%;
+  padding: 0 0 0 13%;
+  margin-bottom: 10px;
   color: #e8e8e8;
+}
+.sidebar p a {
+  display: block;
 }
 .sidebar p:hover {
   background-color: #979356;
@@ -119,7 +144,7 @@ header {
 }
 
 .popup .popup-form {
-  padding: 9vh 0 5vh 0;
+  padding: 6vh 0 16vh 0;
   height: 10vh;
   width: 50%;
   margin: 30vh auto 0 auto;
@@ -132,6 +157,9 @@ header {
   top: 0;
   right: 0;
   font-size: 30px;
+}
+.popup .popup-form form {
+  box-sizing: content-box !important;
 }
 .popup .popup-form input {
   border: none;
@@ -196,7 +224,7 @@ header {
   margin: 0 auto;
 }
 .setting-contents p {
-  margin-top: 30px;
+  margin-top: 15px;
   padding-bottom: 13px;
   border-bottom: 1px solid #bdbbbb;
 }

@@ -3,6 +3,7 @@
 namespace App\DataProvider;
 
 use App\DataProvider\Eloquent\TrainingMenuList;
+use Exception;
 
 class TrainingMenuListRepository implements TrainingMenuListRepositoryInterface
 {
@@ -43,5 +44,16 @@ class TrainingMenuListRepository implements TrainingMenuListRepositoryInterface
     {
         $name_urls = $this->training_menu_List->find($id)->trainingMenuItems()->get(['item_name', 's3_img_url']);
         return $name_urls;
+    }
+
+    public function delete(int $id)
+    {
+        try{
+            $this->training_menu_List->find($id)->trainingMenuItems()->detach();
+            $this->training_menu_List->where('list_id', $id)->delete();
+            return true;
+        }catch(Exception $e){
+            return $e;
+        }       
     }
 }

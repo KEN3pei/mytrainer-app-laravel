@@ -21,6 +21,7 @@ Route::group(['prefix' => 'top'], function() {
     Route::post('/', 'TopController@createList');
     Route::get('/menulist', 'TopController@show')->middleware('auth');
     Route::post('/menulist', 'TopController@addItem');
+    Route::post('/menulist/delete', 'TopController@delete');
 });
 
 Route::group(['prefix' => 'search'], function() {
@@ -30,6 +31,7 @@ Route::group(['prefix' => 'search'], function() {
 
 Route::group(['prefix' => 'setting'], function() {
     Route::get('/', 'SettingController@index')->middleware('auth');
+    Route::post('/', 'SettingController@edit');
     Route::get('/logout', 'SettingController@logout')->middleware('auth');
 });
 
