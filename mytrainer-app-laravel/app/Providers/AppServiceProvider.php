@@ -13,7 +13,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        // 
         $this->app->singleton(
             \App\DataProvider\TrainingMenuItemRepositoryInterface::class,
             \App\DataProvider\TrainingMenuItemRepository::class
@@ -25,6 +25,10 @@ class AppServiceProvider extends ServiceProvider
         $this->app->singleton(
             \App\DataProvider\ItemBelongingListRepositoryInterface::class,
             \App\DataProvider\ItemBelongingListRepository::class
+        );
+        $this->app->singleton(
+            \App\DataProvider\UserRepositoryInterface::class,
+            \App\DataProvider\UserRepository::class
         );
     }
 

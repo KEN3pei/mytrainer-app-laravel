@@ -31,6 +31,7 @@ Route::group(['prefix' => 'search'], function() {
 
 Route::group(['prefix' => 'setting'], function() {
     Route::get('/', 'SettingController@index')->middleware('auth');
+    Route::post('/', 'SettingController@edit');
     Route::get('/logout', 'SettingController@logout')->middleware('auth');
 });
 
