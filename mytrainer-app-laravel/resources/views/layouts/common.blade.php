@@ -28,9 +28,10 @@
             </div>
         </div>
         <header>
+        <p>MY TRAINER</p>
             <div class="head-section">
-                <a href="/top">top</a>
-                <a href="/search">search</a>
+                <a href="/top">TOP</a>
+                <a href="/search">SEARCH</a>
                 <a href="/setting"><i class="far fa-user icon"></i></a>
             </div>
         </header>
@@ -46,6 +47,14 @@
         <div class="main-content">
             @yield('content')
         </div>
+        <footer>
+            <div><a href="/top">TOP</a></div>
+            <div><a href="/search">SEARCH</a></div>
+            <div><a href="/setting"><i class="far fa-user icon"></i></a></div>
+            <!-- <a href="/top">TOP</a> -->
+            <!-- <a href="/search">SEARCH</a> -->
+            <!-- <a href="/setting"><i class="far fa-user icon"></i></a> -->
+        </footer>
     
     <script src="{{ mix('js/app.js') }}"></script>
     </body>

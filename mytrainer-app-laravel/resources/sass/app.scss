@@ -6,3 +6,17 @@
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+
+.navbar {
+    background-color: darkkhaki !important;
+}
+.navbar-brand {
+    margin: 0 auto;
+}
+.register-link {
+    float: right;
+}
+main {
+    background-color: #e8e8e8;
+    height: 93vh;
+}
