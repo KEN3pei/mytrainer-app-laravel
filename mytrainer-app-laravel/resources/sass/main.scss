@@ -1,6 +1,8 @@
 $pc: 1024px; // PC
 $tab: 680px; // タブレット
 $sp: 480px;  // スマホ
+$sp-s: 376px;  // 小さめのスマホ
+$sp-ss: 321px;  // スマホSE,5s
 @mixin pc {
   @media (max-width: ($pc)) {
     @content;
@@ -13,6 +15,16 @@ $sp: 480px;  // スマホ
 }
 @mixin sp {
   @media (max-width: ($sp)) {
+    @content;
+  }
+}
+@mixin sp-s {
+  @media (max-width: ($sp-s)) {
+    @content;
+  }
+}
+@mixin sp-ss {
+  @media (max-width: ($sp-ss)) {
     @content;
   }
 }
@@ -35,23 +47,24 @@ header {
   };
   p {
     display: none;
-    padding-top: 8px;
-    // padding-left: 8px;
-    text-align: center;
+    padding-left: 8px;
+    vertical-align: middle;
+    margin: 0;
+    height: 5vh;
     color: #696969;
     @include sp {
-      display: block;
+      display: table-cell;
     };
   }
 } 
 footer {
+  padding-bottom: 1px;
   display: none;
   position: absolute;
   bottom: 0;
   height: 10vh;
   width: 100%;
   background-color: darkkhaki;
-  border-bottom: 1px solid #fff;
   flex-wrap: wrap;
   align-content: center;
   justify-content: space-around;
@@ -119,7 +132,7 @@ footer {
   }
 }
 .sidebar {
-  height: 89vh;
+  height: 90vh;
   width: 20%;
   background-color: darkkhaki;
   border-right: 1px solid #fff;
@@ -176,6 +189,13 @@ footer {
   @include sp {
     width: 100%;
     left: 0;
+    top: 30px;
+  };
+  @include sp-s {
+    top: 20px;
+  };
+  @include sp-ss {
+    top: 0;
   };
   p {
       margin: 0;
@@ -184,6 +204,10 @@ footer {
 .create-menu-sec {
   margin: 25px;
   padding: 15px 10px;
+  @include sp-ss {
+    padding: 15px 0px;
+    margin: 45px 25px 25px 25px;
+  };
   a {
       background-color: #333333;
       opacity: 0.7;
@@ -247,11 +271,17 @@ footer {
   margin: 30px;
   text-align: center;
   @include sp {
-    margin: 0 30px 30px 30px;
+    margin: 30px 30px 30px 30px;
+  };
+  @include sp-s {
+    margin: 50px 30px 30px 30px;
   };
   input, button {
-      padding: 3px 30px;
+      // padding: 3px 30px;
       border: 0;
+      @include sp-ss {
+        padding: 0;
+      };
   }
   button:hover {
       background-color: #bdbbbb;
@@ -268,6 +298,10 @@ footer {
   img {
       height: 130px;
       width: 180px;
+      @include sp-s {
+        height: 110px;
+        width: 140px;
+      };
     }
 }
 .pagination {
@@ -325,6 +359,12 @@ footer {
 .carousel {
   width: 50%;
   margin: 40px auto;
+  @include sp-s {
+    width: 60%;
+  };
+  @include sp-ss {
+    width: 64%;
+  };
   .carousel-inner {
     position: relative;
     width: 200px;
@@ -351,6 +391,12 @@ footer {
   @include sp {
     height: 42vh;
   };
+  @include sp-s {
+    margin: 30px auto 30px auto;
+  };
+  @include sp-ss {
+    height: 38vh;
+  };
   .add-items {
     height: 10vh;
     margin: 10px;
@@ -365,9 +411,15 @@ footer {
   white-space: nowrap;
   border-collapse: separate;
   border-spacing: 13px 15px;
+  @include sp-ss {
+    border-spacing: 7px 7px;
+  };
   img {
     height: 100%;
     width: 100px;
+    @include sp-s {
+      width: 80px;
+    };
   }
   p {
     display: inline-block;
