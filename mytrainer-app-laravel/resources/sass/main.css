@@ -22,25 +22,27 @@ header {
 
 header p {
   display: none;
-  padding-top: 8px;
-  text-align: center;
+  padding-left: 8px;
+  vertical-align: middle;
+  margin: 0;
+  height: 5vh;
   color: #696969;
 }
 
 @media (max-width: 480px) {
   header p {
-    display: block;
+    display: table-cell;
   }
 }
 
 footer {
+  padding-bottom: 1px;
   display: none;
   position: absolute;
   bottom: 0;
   height: 10vh;
   width: 100%;
   background-color: darkkhaki;
-  border-bottom: 1px solid #fff;
   flex-wrap: wrap;
   align-content: center;
   justify-content: space-around;
@@ -131,7 +133,7 @@ footer div a:hover {
 }
 
 .sidebar {
-  height: 89vh;
+  height: 90vh;
   width: 20%;
   background-color: darkkhaki;
   border-right: 1px solid #fff;
@@ -200,6 +202,19 @@ footer div a:hover {
   .main-content {
     width: 100%;
     left: 0;
+    top: 30px;
+  }
+}
+
+@media (max-width: 376px) {
+  .main-content {
+    top: 20px;
+  }
+}
+
+@media (max-width: 321px) {
+  .main-content {
+    top: 0;
   }
 }
 
@@ -210,6 +225,13 @@ footer div a:hover {
 .create-menu-sec {
   margin: 25px;
   padding: 15px 10px;
+}
+
+@media (max-width: 321px) {
+  .create-menu-sec {
+    padding: 15px 0px;
+    margin: 45px 25px 25px 25px;
+  }
 }
 
 .create-menu-sec a {
@@ -288,13 +310,24 @@ footer div a:hover {
 
 @media (max-width: 480px) {
   .search-form {
-    margin: 0 30px 30px 30px;
+    margin: 30px 30px 30px 30px;
+  }
+}
+
+@media (max-width: 376px) {
+  .search-form {
+    margin: 50px 30px 30px 30px;
   }
 }
 
 .search-form input, .search-form button {
-  padding: 3px 30px;
   border: 0;
+}
+
+@media (max-width: 321px) {
+  .search-form input, .search-form button {
+    padding: 0;
+  }
 }
 
 .search-form button:hover {
@@ -317,6 +350,13 @@ footer div a:hover {
 .image-list-sec img {
   height: 130px;
   width: 180px;
+}
+
+@media (max-width: 376px) {
+  .image-list-sec img {
+    height: 110px;
+    width: 140px;
+  }
 }
 
 .pagination {
@@ -388,6 +428,18 @@ footer div a:hover {
   margin: 40px auto;
 }
 
+@media (max-width: 376px) {
+  .carousel {
+    width: 60%;
+  }
+}
+
+@media (max-width: 321px) {
+  .carousel {
+    width: 64%;
+  }
+}
+
 .carousel .carousel-inner {
   position: relative;
   width: 200px;
@@ -419,6 +471,18 @@ footer div a:hover {
   }
 }
 
+@media (max-width: 376px) {
+  .add-menu-list {
+    margin: 30px auto 30px auto;
+  }
+}
+
+@media (max-width: 321px) {
+  .add-menu-list {
+    height: 38vh;
+  }
+}
+
 .add-menu-list .add-items {
   height: 10vh;
   margin: 10px;
@@ -435,9 +499,21 @@ footer div a:hover {
   border-spacing: 13px 15px;
 }
 
+@media (max-width: 321px) {
+  .table {
+    border-spacing: 7px 7px;
+  }
+}
+
 .table img {
   height: 100%;
   width: 100px;
+}
+
+@media (max-width: 376px) {
+  .table img {
+    width: 80px;
+  }
 }
 
 .table p {
