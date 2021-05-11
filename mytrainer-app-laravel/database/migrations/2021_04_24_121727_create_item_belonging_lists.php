@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateItemBelongingList extends Migration
+class CreateItemBelongingLists extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateItemBelongingList extends Migration
      */
     public function up()
     {
-        Schema::create('item_belonging_list', function (Blueprint $table) {
+        Schema::create('item_belonging_lists', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('list_id');
             $table->foreign('list_id')->references('list_id')->on('training_menu_lists');
@@ -30,6 +30,6 @@ class CreateItemBelongingList extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('item_belonging_list');
+        Schema::dropIfExists('item_belonging_lists');
     }
 }
