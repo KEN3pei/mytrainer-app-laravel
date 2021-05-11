@@ -11,6 +11,7 @@ class TrainingMenuItemsTableSeeder extends Seeder
      */
     public function run()
     {
-        //
+        $path = 'database/sql/training_menu_items_202105110958.sql';
+        DB::unprepared(file_get_contents($path));
     }
 }
