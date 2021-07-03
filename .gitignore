@@ -1,1 +1,5 @@
 .env
+.default_server
+.account.key
+.dhparam.pem
+.localhost

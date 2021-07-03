@@ -2,7 +2,7 @@
 @section('content')
     <div>
         <div class="create-menu-sec" id="create-menu">
-            <a href="">＋</a>
+            <a>＋</a>
             <p>トレーニングメニューを作成</p>
         </div>
         <div class="sp-menuLists">

@@ -1,9 +1,21 @@
 version: '3'
 services:
+  https-portal:
+    image: steveltn/https-portal:1
+    ports:
+      - 80:80
+      - 443:443
+    restart: always
+    environment:
+      DOMAINS: 'localhost -> http://web'
+      STAGE: local
+      # STAGE: production
+    volumes:
+      - .:/var/lib/https-portal  
   web:
     image: nginx:1.15.6
     ports:
-      - '8000:80'
+      - '8000:8000'
     depends_on:
       - app
     volumes:
