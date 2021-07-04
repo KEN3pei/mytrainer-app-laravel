@@ -1,0 +1,55 @@
+name: Mirror Repository 
+
+on:
+  push:
+    branches:
+      - master  # branch:master に対する push が行われた時にのみ処理を実行する
+jobs:
+  build:
+    runs-on: ubuntu-latest  # 最新のubuntuイメージを使用する
+    env:
+      # ミラー先リポジトリ名
+      MIRROR_REPOSITORY_NAME: <ミラー先リポジトリ名>
+      # ミラー先のリポジトリSSHパス
+      MIRROR_RIPOSITORY:  <ミラー先リポジトリのclone用SSHパス(git:github～っての)>
+      # gitアカウント名(git config user.name）
+      GIT_NAME: <Github のアカウント名>
+      # gitメールアドレス（git config user.email）
+      GIT_MAILADDRESS: <Github のメールアドレス>
+    steps:
+    - uses: actions/checkout@v2
+    - name: set-git
+      run: |
+        git config --global user.name $GIT_NAME
+        git config --global user.email $GIT_MAILADDRESS
+    - name: set-ssh
+      run: |
+        mkdir ~/.ssh                                            # SSHディレクトリ作成
+        chmod 700 ~/.ssh                                        # 権限を設定
+        echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa   # secretに保存されているパスフレーズなしの秘密鍵を出力する
+        chmod 600 ~/.ssh/id_rsa                                 # 権限を限定する
+    - name: clone
+      run: |
+        mkdir ~/mirror                                          # ミラー用ディレクトリ作成
+        cd ~/mirror                                             # ミラー用ディレクトリに移動
+        git clone $MIRROR_RIPOSITORY                            # ミラー用リポジトリをclone
+        echo | ls -l ./                                         # ファイル存在確認
+    - name: export
+      run: |
+        git archive --format=zip HEAD > ~/original.zip          # リポジトリの最新ソースを zip でexportする
+        echo | ls -l ~/original.zip                             # ファイル存在確認
+        mkdir ~/original                                        # 保持用ディレクトリ作成
+        unzip -o -d ~/$MIRROR_REPOSITORY_NAME ~/original.zip    # zipを展開する(既存上書き)
+        echo | ls -l ~/$MIRROR_REPOSITORY_NAME                  # 中身表示
+    - name: copy
+      run: |
+        cp -r ~/$MIRROR_REPOSITORY_NAME ~/mirror                # オリジナルをミラーにコピーする
+        echo | ls -l ~/mirror/$MIRROR_REPOSITORY_NAME           # 中身表示
+    - name: push
+      run: |
+        cd ~/mirror/$MIRROR_REPOSITORY_NAME                     # ミラー用リポジトリに移動
+        echo | ls -l                                            # 中身表示
+        git diff                                                # 差分表示
+        git add -A                                              # 全部追加
+        git commit -m "mirror from original"                    # commit
+        git push origin master                                  # push
