@@ -9,6 +9,6 @@ sudo systemctl start docker
 
 sudo docker network create ALLHOME-PROJECT-NETWORK
 
-sudo docker-compose -p mytrainer-app-application-server -f /var/app/docker-compose.yml down
+docker-compose -p mytrainer-app-application-server -f /var/app/docker-compose.yml down
 
-sudo docker-compose -p mytrainer-app-application-server -f /var/app/docker-compose.yml up -d
+docker-compose -p mytrainer-app-application-server -f /var/app/docker-compose.yml up -d
