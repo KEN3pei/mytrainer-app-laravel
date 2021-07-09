@@ -8,8 +8,8 @@ services:
     restart: always
     environment:
       DOMAINS: 'localhost -> http://web'
-      STAGE: local
-      # STAGE: production
+      # STAGE: local
+      STAGE: production
     volumes:
       - .:/var/lib/https-portal  
   web:
