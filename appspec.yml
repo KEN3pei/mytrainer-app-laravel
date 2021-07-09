@@ -1,0 +1,17 @@
+version: 0.0
+os: linux
+files:
+  - source: /
+    destination: /var/app
+permissions:
+  - object: /var/app/scripts/start.sh
+    pattern: "**"
+    owner: ec2-user
+    group: ec2-user
+    mode: 755
+    type:
+      - file
+hooks:
+  ApplicationStart:
+    - location: scripts/start.sh
+      runas: ec2-user
