@@ -46,8 +46,8 @@ return [
         'mysql' => [
             'driver' => 'mysql',
             'url' => env('DATABASE_URL'),
-            'host' => env('172.31.32.1', ''), // 接続先インスタンスprivateip
-            // 'host' => env('DB_HOST', '127.0.0.1'), デフォルト設定
+            // 'host' => env('172.31.43.71', ''), // 接続先インスタンスprivateip
+            'host' => env('DB_HOST', '172.31.43.71'),
             'port' => env('DB_PORT', '3306'),
             'database' => env('DB_DATABASE', 'forge'),
             'username' => env('DB_USERNAME', 'forge'),
