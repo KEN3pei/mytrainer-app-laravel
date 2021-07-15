@@ -25,7 +25,7 @@ services:
     build: ./docker/php
     volumes:
         - .:/var/app
-networks:
-  default:
-    external:
-      name: ALLHOME-PROJECT-NETWORK
+# networks:
+#   default:
+#     external:
+#       name: ALLHOME-PROJECT-NETWORK
