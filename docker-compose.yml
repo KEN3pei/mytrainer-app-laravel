@@ -5,7 +5,7 @@ services:
     deploy:
       replicas: 1
       placement:
-        constraints: [node.role == manager]
+        constraints: [node.hostname == ip-111-11-6-85.ap-northeast-1.compute.internal]
     ports:
       - 80:80
       - 443:443
@@ -21,7 +21,7 @@ services:
     deploy:
       replicas: 1
       placement:
-        constraints: [node.role == manager]
+        constraints: [node.hostname == ip-111-11-6-85.ap-northeast-1.compute.internal]
     ports:
       - '8000:8000'
     depends_on:
@@ -34,7 +34,7 @@ services:
     deploy:
       replicas: 1
       placement:
-        constraints: [node.role == manager]
+        constraints: [node.hostname == ip-111-11-6-85.ap-northeast-1.compute.internal]
     volumes:
         - .:/var/app
 # networks:
