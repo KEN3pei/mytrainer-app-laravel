@@ -22,7 +22,7 @@ services:
       - ./docker/web/default.conf:/etc/nginx/conf.d/default.conf
       - .:/var/app
   app:
-    build: ./docker/php
+    build: php:7.2-fpm
     volumes:
         - .:/var/app
 # networks:
