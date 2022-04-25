@@ -2,26 +2,18 @@ version: '3'
 services:
   https-portal:
     image: steveltn/https-portal:1
-    deploy:
-      replicas: 1
-      placement:
-        constraints: [node.hostname == ip-111-11-6-85.ap-northeast-1.compute.internal]
     ports:
       - 80:80
       - 443:443
     restart: always
     environment:
-      DOMAINS: 'localhost -> http://web'
-      # STAGE: local
-      STAGE: production
+      DOMAINS: 'localhost -> http://web:8000'
+      STAGE: local
+      # STAGE: production
     volumes:
       - .:/var/lib/https-portal  
   web:
     image: nginx:1.15.6
-    deploy:
-      replicas: 1
-      placement:
-        constraints: [node.hostname == ip-111-11-6-85.ap-northeast-1.compute.internal]
     ports:
       - '8000:8000'
     depends_on:
@@ -30,20 +22,11 @@ services:
       - ./docker/web/default.conf:/etc/nginx/conf.d/default.conf
       - .:/var/app
   app:
-    image: ken3peidockerid/mytrainer-app-laravel-php7.4
-    # build: ./docker/php
-    deploy:
-      replicas: 1
-      placement:
-        constraints: [node.hostname == ip-111-11-6-85.ap-northeast-1.compute.internal]
+    build: ./docker/php
     volumes:
         - .:/var/app
   mysql:
     image: mysql:5.7
-    deploy:
-      replicas: 1
-      placement:
-        constraints: [node.hostname == ip-172-31-43-71.ap-northeast-1.compute.internal]
     environment:
         MYSQL_DATABASE: menuDB
         MYSQL_USER: ken3pei
@@ -55,7 +38,3 @@ services:
         - mysql-data:/var/lib/mysql
 volumes:
     mysql-data:
-# networks:
-#   default:
-#     external:
-#       name: ALLHOME-PROJECT-NETWORK
