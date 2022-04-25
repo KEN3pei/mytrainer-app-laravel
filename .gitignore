@@ -1,5 +1,7 @@
 .env
-.default_server
-.account.key
-.dhparam.pem
-.localhost
+/default_server
+/account.key
+/dhparam.pem
+/localhost
+/.github
+/dynamic-env*
